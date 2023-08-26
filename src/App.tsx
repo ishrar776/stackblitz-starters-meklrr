@@ -6,7 +6,8 @@ export default function App() {
   const [values, setValue] = useState({
     txtname: '',
   });
-   var passvalue ='';
+  const [point, SetPoint] = useState('');
+  var passvalue = 'intial';
   const entervalue = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -15,8 +16,10 @@ export default function App() {
   const submitData = (e) => {
     e.preventDefault();
     const alldata = { ...values };
-    console.log('values of submit data is' + JSON.stringify(alldata));
-    passvalue=values.txtname;
+    //console.log('values of submit data is' + JSON.stringify(alldata));
+    passvalue = values.txtname;
+    console.log('value of pass data is' + passvalue);
+    SetPoint(passvalue);
     //these alldata need to [aas into store
   };
   return (
@@ -35,7 +38,7 @@ export default function App() {
         <input type="submit" onClick={submitData} />
       </p>
       <p>
-        <Bapp name={passvalue} />
+        <Bapp name={point} />
       </p>
     </div>
   );
