@@ -7,9 +7,9 @@
 //   return response.data;
 // };
 import React, { useEffect } from 'react';
-export const allProduct = () => {
+export const allProduct = async () => {
   const url = '../images/data.json';
-  useEffect(() => {
+  await useEffect(() => {
     fetch(url)
       .then((response) => response.json())
       .catch((error) => console.log(error));
