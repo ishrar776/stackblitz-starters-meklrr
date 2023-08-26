@@ -6,6 +6,7 @@ export default function App() {
   const [values, setValue] = useState({
     txtname: '',
   });
+   var passvalue ='';
   const entervalue = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -15,6 +16,7 @@ export default function App() {
     e.preventDefault();
     const alldata = { ...values };
     console.log('values of submit data is' + JSON.stringify(alldata));
+    passvalue=values.txtname;
     //these alldata need to [aas into store
   };
   return (
@@ -33,7 +35,7 @@ export default function App() {
         <input type="submit" onClick={submitData} />
       </p>
       <p>
-        <Bapp />
+        <Bapp name={passvalue} />
       </p>
     </div>
   );
